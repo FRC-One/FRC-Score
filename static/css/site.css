@@ -1,0 +1,24 @@
+.page-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.colL{
+    flex: 35;
+    height: 100%;
+    overflow: auto;
+    background-color: #FF0000;
+}
+.colR{
+    flex: 65;
+    height: 100%;
+    overflow: auto;
+    background-color: #00FF00;
+}
+
+@media only screen and (max-width: 600px) {
+    .page-content {
+        flex-direction: column-reverse;
+    }
+}

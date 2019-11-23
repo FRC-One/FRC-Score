@@ -7,12 +7,12 @@ import (
 	"net/http"
 )
 
-func returnGlobalHTML(w http.ResponseWriter, r *http.Request) {
-	t, err := template.ParseFiles("html/global.html", "html/pageStart.html", "html/pageEnd.html")
+func returnHomePage(w http.ResponseWriter, r *http.Request) {
+	t, err := template.ParseFiles("html/home.html","html/pageSections/pageStart.html","html/pageSections/pageEnd.html")
 
 	if err == nil{
 		w.WriteHeader(200)
-		err = t.ExecuteTemplate(w, "global.html", nil)
+		err = t.ExecuteTemplate(w, "home.html", nil)
 		if err != nil{
 			panic(err)
 		}
@@ -25,7 +25,7 @@ func returnGlobalHTML(w http.ResponseWriter, r *http.Request) {
 }
 
 func returnTrackPage(w http.ResponseWriter, r *http.Request) {
-	t, err := template.ParseFiles("html/track.html", "html/pageStart.html", "html/pageEnd.html")
+	t, err := template.ParseFiles("html/track.html", "html/pageSections/pageStart.html","html/pageSections/pageEnd.html")
 
 	if err == nil{
 		w.WriteHeader(200)
@@ -44,7 +44,7 @@ func returnTrackPage(w http.ResponseWriter, r *http.Request) {
 func main() {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/", returnGlobalHTML)
+	r.HandleFunc("/", returnHomePage)
 	r.HandleFunc("/track", returnTrackPage)
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
 
