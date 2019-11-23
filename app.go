@@ -2,25 +2,36 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"github.com/gorilla/mux"
+	"html/template"
 	"net/http"
-
 )
 
 func returnGlobalHTML(w http.ResponseWriter, r *http.Request) {
-	body, err := ioutil.ReadFile("./html/global.html")
+	t, err := template.ParseFiles("html/global.html", "html/pageStart.html", "html/pageEnd.html")
+
 	if err == nil{
 		w.WriteHeader(200)
-		fmt.Fprintf(w, string(body))
+		err = t.ExecuteTemplate(w, "global.html", nil)
+		if err != nil{
+			panic(err)
+		}
 
 
+	} else{
+		fmt.Println(err)
 	}
 
 }
 
 func main() {
-	http.HandleFunc("/", returnGlobalHTML)
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	r := mux.NewRouter()
+
+	r.HandleFunc("/", returnGlobalHTML)
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
+
+
+	if err := http.ListenAndServe(":8080", r); err != nil {
 		panic(err)
 	}
 	
