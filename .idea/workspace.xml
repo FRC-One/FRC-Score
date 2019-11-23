@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06a2a0b7-a852-443c-9f3d-612176481447" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/html/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/site.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/global.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/pageEnd.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pageSections/pageEnd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/pageStart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pageSections/pageStart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/track.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/track.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/site.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
